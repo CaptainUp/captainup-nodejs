@@ -1,0 +1,9 @@
+test/**
+lib/**
+samples/**
+
+*.md
+
+Cakefile
+npm-debug.log
+.travis.yml

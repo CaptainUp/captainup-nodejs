@@ -1,0 +1,49 @@
+{
+	"author": "Captain Up <team@captainup.com> (https://github.com/captainup)",
+	"name": "captainup",
+	"version": "0.9.0",
+	"description": "Everything that you need to incentivize and engage with your community, now available as an open-source SDK for NodeJS and Parse",
+	"keywords": ["SDK", "engagement", "platform", "game mechanics", "gamification", "API", "captainup", "Captain Up", "parse"],
+	"homepage": "https://github.com/captainup/captainup-nodejs/",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/captainup/captainup-nodejs.git"
+	},
+	"contributors": [
+		{
+			"name": "Almog Melamed",
+			"email": "radagaisus@gmail.com",
+			"web": "https://github.com/radagaisus/"
+		}
+	],
+	"licenses": [
+		{
+			"type": "Custom",
+			"url": "http://github.com/captainup/captainup-nodejs/blob/master/LICENSE"
+		}
+	],
+	"bugs": {
+		"url": "http://github.com/captainup/captainup-nodejs/issues/"
+	},
+	"engines": {
+		"node": ">=0.6.0"
+	},
+	"dependencies": {
+		"underscore": "1.7.0",
+		"request": "2.42.0",
+		"bluebird": "2.3.2"
+	},
+	"devDependencies": {
+		"coffee-script": "latest",
+		"sinon": "latest",
+		"mocha": "latest",
+		"chai": "latest",
+		"istanbul": "latest"
+	},
+	"scripts": {
+		"test": "./node_modules/mocha/bin/mocha -R spec --ui bdd --require coffee-script --colors --compilers coffee:coffee-script/register test/*",
+		"coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui bdd --require coffee-script --colors --compilers coffee:coffee-script/register test/*"
+	},
+	"bin": {}
+}

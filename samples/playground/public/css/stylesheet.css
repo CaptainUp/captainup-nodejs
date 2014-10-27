@@ -1,0 +1,619 @@
+/* CSS Reset
+ * --------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+}
+
+
+/* General Style
+ * -------------------------------------------------------------------------------------*/
+body {
+	background: #009df1 url("https://captainup.com/assets/splash/back.png");
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+.content {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 95%;
+}
+
+h1 {
+	color: #00b5f0;
+	font-size: 36px;
+	margin-top: 140px;
+	text-align: center;
+	font-weight: bold;
+}
+
+h2 {
+	color: #00b5f0;
+	font-size: 36px;
+	margin-top: 80px;
+	text-align: center;
+	font-weight: bold;
+}
+
+h3 {
+	color: #009df1;
+	font-size: 28px;
+	font-weight: 200;
+	margin: 32px 0 8px 0;
+}
+
+h4 {
+	color: #009df1;
+	font-size: 28px;
+	font-weight: 200;
+	margin: 16px 0 8px 0;
+}
+
+h5 {
+	font-size: 20px;
+	color: #009df1;
+	font-weight: 200;
+}
+
+p {
+	line-height: 34px;
+	color: #46484C;
+	padding: 8px 0 8px 0;
+	text-align: justify;
+}
+
+ul, ol {
+	padding: 4px 0 10px 0;
+}
+
+li {
+	color: #46484C;
+	line-height: 34px;
+	margin-left: 36px;
+}
+
+ul li {
+	list-style: disc;
+}
+
+ol li {
+	list-style: decimal;
+}
+
+strong {
+	font-weight: bold;
+	color: #333;
+}
+
+a, a:visited {
+	color: #00b5f0;
+}
+
+a:hover {
+	color: #646a80;
+}
+
+/* small help explanation wells */
+.well {
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#container {
+	background: #fff;
+	margin-top: 20px;
+	margin-bottom: 60px;
+	padding: 60px 80px;
+	max-width: 920px;
+}
+
+/* Title Section
+ * -------------------------------------------------------------------------------------*/
+#title-section {
+	max-width: 960px;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	height: 220px;
+	
+	position: relative;
+}
+
+h1#title {
+	color: #fff;
+	font-family: "Rooney-Sans", "Open Sans", sans-serif;
+	font-weight: bold;
+	font-size: 42px;
+	margin-bottom: 20px;
+	padding-top: 40px;
+}
+
+#explainer {
+	font-family: "Open Sans", sans-serif;
+	font-size: 22px;
+	line-height: 40px;
+	font-weight: 300;
+	color: #fff;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+
+/* Background Clouds
+ * -------------------------------------------------------------------------------------*/
+.graphics-container {
+	max-width: 960px;
+	width: 95%;
+	position: absolute;
+	top: 0px;
+	z-index: 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+}
+.graphics-container .cloud {
+	position: absolute;
+	z-index: -1;
+}
+.graphics-container .cloud1 {
+	left: -140px;
+	top: -57px;
+}
+.graphics-container .cloud2 {
+	top: 2px;
+	right: -170px;
+	width: 180px;
+}
+.graphics-container .cloud3 {
+	top: 262px;
+	left: -40px;
+}
+.graphics-container .cloud4 {
+	top: 265px;
+	right: -170px;
+}
+
+
+/* Main Content
+ * -------------------------------------------------------------------------------------*/
+#main-content {
+	background: #f0f6fb;
+	padding: 0 0 40px 0;
+}
+
+#main-content .first-title {
+	margin-top: 140px;
+	padding-top: 80px;
+}
+
+
+/* Code Highlighting
+ * -------------------------------------------------------------------------------------*/
+
+/* Short inline code snippets */
+code {
+	padding: 3px 4px;
+	color: #707070;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+
+.code-example {
+	margin: 20px 0;
+}
+.code-highlight code {
+	padding: 10px 40px 30px 40px;
+	font-size: 18px;
+
+}
+/* Maximum height for the responses. The response will be scrollable */
+.code-response code {
+	min-height: 60px;
+	max-height: 330px;
+	overflow-wrap: break-word;
+}
+
+/* Run Button */
+button.button.run-button {
+	font-size: 20px;
+	float: right;
+	margin-top: -66px;
+	margin-right: 20px;
+}
+
+/* The respones snippet starts as hidden */
+.response-snippet {
+	display: none;
+}
+
+
+/* Railscasts-like style (c) Visoft, Inc. (Damien White)
+ * ----------------------------------------------------------------------------------- */
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #232323;
+	color: #e6e1dc;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc,
+.hljs-shebang {
+	color: #bc9458;
+	font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-function .hljs-keyword,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title,
+.method,
+.hljs-list .hljs-title {
+	color: #c26230;
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.tex .hljs-command,
+.markdown .hljs-link_label {
+	color: #a5c261;
+}
+
+.hljs-subst {
+	color: #519f50;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-keyword,
+.hljs-tag .hljs-title,
+.hljs-doctype,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.input_number {
+	color: #e8bf6a;
+}
+
+.hljs-identifier {
+	color: #d0d0ff;
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.smalltalk .hljs-class,
+.hljs-javadoctag,
+.hljs-yardoctag,
+.hljs-phpdoc {
+	text-decoration: none;
+}
+
+.hljs-constant {
+	color: #da4939;
+}
+
+
+.hljs-symbol,
+.hljs-built_in,
+.ruby .hljs-symbol .hljs-string,
+.ruby .hljs-symbol .hljs-identifier,
+.markdown .hljs-link_url,
+.hljs-attribute {
+	color: #6d9cbe;
+}
+
+.markdown .hljs-link_url {
+	text-decoration: underline;
+}
+
+
+
+.hljs-params,
+.hljs-variable,
+.clojure .hljs-attribute {
+	color: #d0d0ff;
+}
+
+.css .hljs-tag,
+.hljs-rules .hljs-property,
+.hljs-pseudo,
+.tex .hljs-special {
+	color: #cda869;
+}
+
+.css .hljs-class {
+	color: #9b703f;
+}
+
+.hljs-rules .hljs-keyword {
+	color: #c5af75;
+}
+
+.hljs-rules .hljs-value {
+	color: #cf6a4c;
+}
+
+.css .hljs-id {
+	color: #8b98ab;
+}
+
+.hljs-annotation,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+	color: #9b859d;
+}
+
+.hljs-preprocessor,
+.hljs-preprocessor *,
+.hljs-pragma {
+	color: #8996a8 !important;
+}
+
+.hljs-hexcolor,
+.css .hljs-value .hljs-number {
+	color: #a5c261;
+}
+
+.hljs-title,
+.hljs-decorator,
+.css .hljs-function {
+	color: #ffc66d;
+}
+
+.diff .hljs-header,
+.hljs-chunk {
+	background-color: #2f33ab;
+	color: #e6e1dc;
+	display: inline-block;
+	width: 100%;
+}
+
+.diff .hljs-change {
+	background-color: #4a410d;
+	color: #f8f8f8;
+	display: inline-block;
+	width: 100%;
+}
+
+.hljs-addition {
+	background-color: #144212;
+	color: #e6e1dc;
+	display: inline-block;
+	width: 100%;
+}
+
+.hljs-deletion {
+	background-color: #600;
+	color: #e6e1dc;
+	display: inline-block;
+	width: 100%;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+	opacity: 0.7;
+}
+
+
+/* Buttons
+ * -------------------------------------------------------------------------------------*/
+.button {
+	outline: none;
+	display: inline-block;
+	font-family: "Rooney-Sans", sans-serif;
+	font-size: 3em;
+	font-weight: bold;
+	padding: .3em 1.5em .3em 1.5em;
+	box-sizing: border-box;
+	color: white;
+	background: #e63830;
+	border: none;
+	border-radius: .3em;
+	border-bottom: solid 0.1em #913834;
+	text-shadow: 0px -2px #913834;
+	text-align: center;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: #ff5343;
+	border-bottom: solid 0.1em #913834;
+}
+
+.button:active {
+	background: #c1251e;
+	border-top: solid 0.1em #7a1f1b;
+	border-bottom: none;
+}
+
+.button.small {
+	font-size: 1.5em;
+	padding: .2em 1em;
+}
+
+.button.green {
+	background: #32DBAD;
+	border-bottom: solid .1em #238C70;
+	text-shadow: 0px -2px #309e80;
+}
+
+.button.green:hover {
+	background: #3cecbc;
+	border-bottom: solid .1em #309e80;
+}
+
+.button.green:active {
+	background: #3cecbc;
+	border-top: solid .1em #42FFCC;
+}
+
+/* Hipster button - no background, white border */
+.button.hipster {
+	background: none;
+	text-shadow: none;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	font-weight: normal;
+	font-size: 18px;
+	height: 40px;
+}
+
+
+/* Menu
+ * -------------------------------------------------------------------------------------*/
+#menu {
+	position: fixed;
+	z-index: 1000;
+	height: 3.8em;
+	top: 0;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #e6e8dd;
+	box-shadow: 0 0 2px rgba(12, 14, 16, 0.25);
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+#menu .content {
+	position: relative;
+	text-align: right;
+	max-width: 1260px;
+}
+
+#menu .content .nav, #menu .content .logo, #menu .content .signup {
+	position: absolute;
+}
+
+#menu .content .logo {
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+#menu .content .logo img {
+	width: 3.4em;
+	height: auto;
+}
+
+#menu .content .captain-name {
+	font-family: "Rooney-Sans", sans-serif;
+	font-size: 1.5em;
+	line-height: 2;
+	font-weight: 600;
+	color: #646a80;
+	position: relative;
+	top: -14px;
+	margin-left: 10px;
+}
+
+#menu .content .nav {
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	right: 8em;
+	top: 6px;
+}
+
+#menu .content .nav a {
+	font-family: "Rooney-Sans", sans-serif;
+	color: #009df1;
+	font-size: 1.5em;
+	line-height: 2;
+	font-weight: 600;
+	padding-right: .7em;
+}
+
+#menu .content .nav a:last-child {
+	padding-right: 1em;
+}
+
+#menu .content .nav a:hover {
+	color: #646a80;
+}
+
+#menu .content .button {
+	right: 0px;
+	top: 12px;
+	width: 5.8em;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+

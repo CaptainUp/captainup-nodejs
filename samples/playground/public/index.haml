@@ -1,0 +1,442 @@
+/ Captain Up NodeJS SDK Sample App Playground
+!!!
+%html
+	%head
+
+		/ Page Title
+		%title NodeJS SDK Playground :: Captain Up
+		
+		/ Meta tags
+		%meta{charset: "utf-8"}
+		%meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+		%meta{content: "width=device-width, width=device-height", name: "viewport"}
+		%meta{content: "initial-scale=1.0", name: "viewport"}
+		%meta{content: "Captain Up offers game mechanics and social tools for maximizing engagement, retention, virality and monetization in your web and mobile apps", name: "description"}
+		%meta{content: "#00B5F0", name: "msapplication-TileColor"}
+		%meta{content: "https://captainup.com/assets/logo/logo-500x500.png", name: "msapplication-TileImage"}
+		%link{href: "https://captainup.com/assets/logo/logo-500x500.png", rel: "apple-touch-icon"}
+		
+		/ Fonts
+		%link{href: "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300|Open+Sans+Condensed:300italic,300,700", rel: "stylesheet", type: "text/css"}
+		%script{src: "//use.typekit.net/zsj7cik.js", type: "text/javascript"}
+		:javascript
+			try{Typekit.load();}catch(e){}
+
+		/ Stylesheets and code highlighting
+		%link{href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css", rel: "stylesheet"}
+		%link{href: "/css/stylesheet.css", media: "screen", rel: "stylesheet", type: "text/css"}
+
+		/ Facebook Open Graph tags
+		%meta{content: "Captain Up NodeJS Playground", property: "og:title"}
+		%meta{content: "website", property: "og:type"}
+		%meta{content: "https://nodejs.captainup.com/", property: "og:url"}
+		%meta{content: "https://captainup.com/assets/logo/logo-500x500.png", property: "og:image"}
+		%meta{content: "Captain Up", property: "og:site_name"}
+		%meta{content: "100000012316035", property: "fb:admins"}
+	
+	%body
+
+		/ Load the Facebook and Twitter JavaScript SDKs
+		#fb-root
+			:javascript
+				(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=274937649268398&version=v2.0";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			:javascript
+				window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+		
+
+		/ Top Menu
+		#menu
+			.content
+				.logo
+					%a{:href => "https://captainup.com", :target => "_blank"}
+						%img.cptup-logo-text{:src => "https://captainup.com/assets/splash/captain-head.png"}/
+					%a.captain-name{:href => "https://captainup.com/", :target => "_blank"} Captain Up
+				.nav
+					%a{:href => "https://github.com/captainup/captain-nodejs", :target => "_blank"} GitHub
+					%a{:href => "https://captainup.com/help/", :target => "_blank"} Docs
+					%a{:href => "http://captainup.com/blog/", :target => "_blank"} Blog
+					%a{:href => "https://captainup.com/users/sign_in", :target => "_blank"} Sign In
+				%a{:href => "https://captainup.com/users/sign_up"}
+					.button.green.small.signup SIGN UP
+		
+
+		/ Title section
+		#title-section
+			%h1#title Captain Up NodeJS SDK
+			%p#explainer
+				Everything that you need to incentivize and engage with your community, now available as an open-source SDK for NodeJS and Parse.
+			%button#learn-more.button.hipster.small Learn more
+
+			/ Background Clouds
+			.graphics-container
+				-#%img.graphic.cloud.cloud1{src: 'https://captainup.com/assets/splash/cloud1.png'}
+				-#%img.graphic.cloud.cloud2{src: 'https://captainup.com/assets/splash/cloud2.png'}
+				-#%img.graphic.cloud.cloud3{src: 'https://captainup.com/assets/splash/cloud3.png'}
+				-#%img.graphic.cloud.cloud4{src: 'https://captainup.com/assets/splash/cloud5.png'}
+		
+		
+		/ Main Content
+		#main-content
+
+			/ Getting Started: Installation and Configuration
+			%h2.first-title Getting Started
+			#container.content
+
+				.well
+					:markdown
+						If you haven't done so yet, [sign up to Captain Up](https://captainup.com/users/sign_up) (it's free!), check out [all the features](https://captainup.com/features), go over the [API docs](https://captainup.com/help/api/reference/overview) and [guides](https://captainup.com/docs) and [configure your app](https://captainup.com/help/getting-started/overview) to setup the right incentives for your community actions and behavior.
+
+				%h3 Install
+				:markdown
+					- **NodeJS**: Install using `npm install captainup` or add `captainup` to your `package.json` dependencies.
+					- **Parse**: Download the `captainup.parse.js` file from our [GitHub repository](https://github.com/captainup/captain-nodejs) and copy it to your cloud code folder.
+				
+				%h3 Configuration
+				:markdown
+					1. Require the Captain Up module:
+						- **NodeJS**: `var captain = require('captainup');`
+						- **Parse**: `var captain = require('cloud/captainup.parse.js');`
+
+					2. Initialize it with your API key and API secret:
+				
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									// Configure the Captain Up SDK
+									captain.up({
+										// Your API Key
+										api_key: 'your-api-key',
+										// Your API Secret
+										api_secret: 'your-api-secret'
+									});
+
+				%p.well
+					You can find your API key and secret key on the settings page in
+					%a{target: '_blank', href: 'https://captainup.com/manage'} your Captain Up dashboard
+
+
+			%h2 Using the SDK resources
+			#container.content
+
+				.well
+					:markdown
+						**ProTip**: Looking for more sample code? The full source code for this site can be found in the [samples directory of the SDK's GitHub repository](https://github.com/captainup/captainup-nodejs/blob/master/samples)
+
+				/ Service Status
+				%h3 Status
+				:markdown
+					At any time, you can retrieve the Captain Up service status. The response will contain an HTTP status `code` and a human-readable message with information on the service status. You can manually check the service status on our [status page](http://status.captainup.com/).
+
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									captain.status().done(function(data) {
+										res.json(data);
+									});
+					%button.button.green.small.run-button{"data-path" => "get-status"} run »
+				.response-snippet
+					%h3 Response
+					#get-status-response.code-example.code-response
+						%pre.code-highlight
+							%code.javascript{"data-path" => "get-status"}
+				
+
+				/ Apps Resource
+				%h3 Apps
+				:markdown
+					An app holds all the information and seetings about the way Captain Up works in your site or app, including information about the app's levels, badges, action settings, design, text, and other options. Check out the full [Apps API docs](https://captainup.com/help/api/reference/apps)
+
+				%h4 Retrieving an app
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									captain.apps.get().done(function(data) {
+										res.json(data);
+									});
+					%button.button.green.small.run-button{"data-path" => "get-app"} run »
+				.response-snippet
+					%h3 Response
+					#get-status-response.code-example.code-response
+						%pre.code-highlight
+							%code.javascript{"data-path" => "get-app"}
+				
+
+				/ Users Resource
+				%h3 Users
+				:markdown
+					The user resource provides information about an app's users. Users share basic information and details such as the user name and the avatar image across all Captain Up apps, while the users' progress in each app is completely independent. Check out the full [Users API docs](https://captainup.com/help/api/reference/users) for more information.
+
+				%h4 Retrieving a user
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									captain.users.get('22161230313409025506561').done(function(data) {
+										res.json(data);
+									});
+					%button.button.green.small.run-button{"data-path" => "get-user"} run »
+				.response-snippet
+					%h3 Response
+					#get-status-response.code-example.code-response
+						%pre.code-highlight
+							%code.javascript{"data-path" => "get-user"}
+
+
+				/ Actions Resource
+				%h3 Actions
+				:markdown
+					Actions are the backbone of the Captain Up platform. Apps can gain deep insights on their users based on their actions; segment, engage, interact and incentivize their users based on user actions, and incentivize users with points, badges, levels, rewards and messages for doing these actions.
+					
+					Captain Up supports completely dynamic actions, and every site and app can create and customize their own actions and how the experience evolves around them. [Learn more about actions](https://captainup.com/help/getting-started/custom-actions-tutorial).
+
+				%h4 Creating an action
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									captain.actions.create({
+										user: '22161230313409025506561',
+										action: {
+											name: 'test',
+											entity: {
+												type: 'SDK',
+												name: 'NodeJS SDK',
+												version: '1.0.0',
+												url: 'http://nodejs.captainup.com/'
+											}
+										}
+									}).done(function(data) {
+										res.json(data);
+									});
+					%button.button.green.small.run-button{"data-path" => "create-action"}  run »
+				.response-snippet
+					%h3 Response
+					#get-status-response.code-example.code-response
+						%pre.code-highlight
+							%code.javascript{"data-path" => "create-action"}
+			
+
+			/ Working with the current user
+			%h2 Working with the current user
+			#container.content
+				:markdown
+					A Captain Up user ID is required in most requests that create or update users data and actions. In a lot of cases, you will want to use the current user's ID in these requests.
+
+					The Captain Up SDK provides a convenience ExpressJS middleware that automatically loads the user ID from your site's cookies, verifies it has not been tampered with, and adds it to `req.captain.current_user` to be used in your requests. More information on how this process works (with code examples) can be found at the [Actions API reference](https://captainup.com/help/api/reference/actions).
+
+					To enable this feature, you'll first need to configure the Captain Up client-side JavaScript SDK to update the user session:
+
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									// Configuration options for the Captain Up JavaScript SDK:
+									captain.up({
+										// Your API key
+										api_key: 'your_api_key',
+										// Enable server-side access to the user's session
+										cookie: true
+									});
+
+				:markdown
+					After enabling this option, Captain Up will store the current user ID, alongside a secure signed version of it inside a cookie called `_cptup_sess` under your domain.
+
+					To enable the Captain Up session middleware, add it right after the `express.cookieParser()` in your middlewares:
+
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									// Cookie parsing middleware
+									app.use(express.cookieParser());
+									// Captain Up cookies middleware
+									app.use(captain.middlewares.cookies());
+									// Body parsing middleware
+									app.use(express.bodyParser());
+
+				:markdown
+					That's it! You can now access `req.captain` and `req.captain.current_user` in all your request handlers. To check if there's currently a Captain Up user in the request, use `req.captain.current_user.exists()`. `req.captain` offers access to all the SDK functions, while `req.captain.current_user` allows you to send all the requests that involve the current user. Let's try it out. Run the code below, and after a few seconds you'll get several points and a new badge for being so awesome.
+
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									// Create a new action for the current user
+									req.captain.current_user.actions.create({
+										action: {
+											// We'll do a 'test' action
+											name: 'test',
+											// You're testing the NodeJS SDK
+											entity: {
+												type: 'SDK',
+												name: 'NodeJS SDK',
+												version: '1.0.0',
+												url: 'http://nodejs.captainup.com/',
+												awesome: 'very'
+											}
+										}
+									}).done(function(data) {
+										res.json(data);
+									})
+					%button.button.green.small.run-button{"data-path" => "current-player-create-action"}  run »
+				.response-snippet
+					%h3 Response
+					#get-status-response.code-example.code-response
+						%pre.code-highlight
+							%code.javascript{"data-path" => "current-player-create-action"}
+
+
+			/ Callbacks and Promises
+			%h2 Callbacks and Promises
+			#container.content
+				:markdown
+					All the SDK methods that send requests to the Captain Up platform are asynchronous. The SDK supports both NodeJS-style callbacks, and promises.
+
+					#### Callbacks
+
+					The last, optional, parameter each request method can receive is a callback function. The callback will be executed once data has returned from Captain Up, or when an error occurred.
+
+					- **NodeJS** - The callback should be in the usual signature of `function(error, response)`.
+					- **Parse** - In Parse, the callback is expected to be an object that contains two keys: `success` is the callback function to call after a successful request; `error` will be called if an error occurred.
+
+				.code-example
+					%pre.code-highlight
+						%code.javascript
+							= preserve do
+								:escaped
+									// NodeJS callbacks
+									captain.status(function(error, response) {
+										// Will output: 'All is good'
+										console.log(response.message);
+									});
+
+									// Parse callbacks
+									captain.status({
+										success: function(response) {
+											// Will output: 'All is good'
+											console.log(response.message);
+										},
+										error: function(error) {
+											// An error occurred...
+										}
+									});
+
+				:markdown
+					#### Promises
+
+					All the Captain Up request methods also return [A+ compliant promises](https://github.com/promises-aplus/promises-spec). In NodeJS, we use [Bluebird promises](https://github.com/petkaantonov/bluebird), and on Parse we use [Parse.Promise](https://www.parse.com/docs/js/symbols/Parse.Promise.html). The promises will be resolved with the response, or be rejected with an error:
+
+				.code-example
+				%pre.code-highlight
+					%code.javascript
+						= preserve do
+							:escaped
+								captain.status()
+								.then(function(response) {
+									// Will output: 'All is good'
+									console.log(response.message);
+								}, function(error) {
+									// An error occurred...
+								});
+
+
+			/ Disqus Comments
+			%h2 Questions? Feedback?
+			#container.content
+				-# Facebook like and share
+				.fb-like{"data-href" => "https://nodejs.captainup.com/", "data-layout" => "button_count", "data-action" => "like", "data-show-faces" => "false", "data-share" => "true"}
+				-# Twitter tweet
+				%a.twitter-share-button{href: "https://twitter.com/share", "data-url" => "https://nodejs.captainup.com/", "data-via" => "cptup"} Tweet
+
+				#disqus_thread
+				:javascript
+					var disqus_shortname = 'cptup';
+
+					(function() {
+						var dsq = document.createElement('script');
+						dsq.type = 'text/javascript';
+						dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+
+
+		/ Code Highlighting
+		%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"}
+
+
+		/ jQuery
+		%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+		
+
+		/ Include the Captain Up Embed SDK
+		#cptup-ready
+		:javascript
+			window.captain = {up: function(fn) { captain.topics.push(fn) }, topics: []};
+			captain.up({
+				// The Captain Up API key
+				api_key: '5413b72a73873a41f4000002',
+				// Enable server-side access to the user's session
+				cookie: true
+			});
+			
+			(function() {
+				var cpt = document.createElement('script'); cpt.type = 'text/javascript'; cpt.async = true;
+				cpt.src = 'http' + (location.protocol == 'https:' ? 's' : '') + '://captainup.com/assets/embed.en.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cpt);
+			})();
+		
+		
+		/ JavaScript to run the playground
+		:javascript
+			// Initialize Code Highlighting
+			hljs.initHighlightingOnLoad();
+
+			// Initializes the playground
+			var initialize = function() {
+				$('body').on('click', '.run-button', function(e) {
+					// Grab a quick reference to the clicked run button
+					$el = $(e.currentTarget);
+					// Get the request URL path from the element's data attribute
+					path = $el.data('path');
+					// Send a JSON request
+					$.getJSON('/' + path, function(data) {
+						// Update the relevant response example with the response
+						// Get the relevant code response section
+						$response_example = $('.code-response code[data-path="' + path + '"]')
+						// and update its content (after clearing it) with the response as a
+						// properly formatted JSON
+						.empty().append(JSON.stringify(data, undefined, 2));
+						// Show the response snippet
+						$response_example.closest('.response-snippet').fadeIn(800);
+						// Re-initialize the code highlighting
+						hljs.highlightBlock($response_example[0]);
+					});
+				});
+
+				// Scroll the page when clicking on `#learn-more`
+				$('#learn-more').click(function() {
+					$('html,body').animate({scrollTop: 470}, 600);
+				});
+			}
+
+			// Initialize and start on DOM ready
+			$(initialize)
+
