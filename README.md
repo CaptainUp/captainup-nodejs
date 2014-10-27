@@ -1,4 +1,4 @@
-![https://captainup.com/assets/help/nodejs/node-js-readme.png](Captain Up - Engagement Platform as a Service)
+![Captain Up - Engagement Platform as a Service](https://captainup.com/assets/help/nodejs/node-js-readme.png)
 
 # Captain Up NodeJS SDK
 
