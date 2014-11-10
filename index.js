@@ -11,7 +11,7 @@ CaptainUp = (function() {
     this.up = __bind(this.up, this);
   }
 
-  CaptainUp.prototype.version = '0.9.0';
+  CaptainUp.prototype.version = '0.9.1';
 
   CaptainUp.prototype.up = function(options) {
     if (options == null) {
@@ -47,6 +47,10 @@ CaptainUp = (function() {
   return CaptainUp;
 
 })();
+
+CaptainUp.prototype.__defineGetter__('client', function() {
+  return new CaptainUp();
+});
 
 CaptainUp.Middlewares = (function() {
   function Middlewares(client) {

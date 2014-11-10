@@ -1,7 +1,7 @@
 {
 	"author": "Captain Up <team@captainup.com> (https://github.com/captainup)",
 	"name": "captainup",
-	"version": "0.9.0",
+	"version": "0.9.1",
 	"description": "Everything that you need to incentivize and engage with your community, now available as an open-source SDK for NodeJS and Parse",
 	"keywords": ["SDK", "engagement", "platform", "game mechanics", "gamification", "API", "captainup", "Captain Up", "parse"],
 	"homepage": "https://github.com/captainup/captainup-nodejs/",

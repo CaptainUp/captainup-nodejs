@@ -66,6 +66,19 @@ describe 'Captain Up', ->
 			expect(captain.api_base_url).to.equal 'https://captainup.com/mechanics/v1'
 
 
+	# Multiple Clients
+	# -------------------------------------------------------------------------------------
+	describe 'Multiple Clients', ->
+
+		it 'Can work with multiple apps', ->
+			# Create two Captain Up clients using the `client` flag
+			app1 = captain.client.up(api_key: 'app1', api_secret: 'secret1')
+			app2 = captain.client.up(api_key: 'app2', api_secret: 'secret2')
+			# Expect their configuration options to be different
+			expect(app1.api_key).to.equal 'app1'
+			expect(app2.api_key).to.equal 'app2'
+
+
 	# API Resources specs
 	# -------------------------------------------------------------------------------------
 	describe 'API Resources', ->

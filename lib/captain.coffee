@@ -9,7 +9,7 @@ class CaptainUp
 
 	# The version of this package. Note that we must manually update this when
 	# releasing new versions, as we can't use `pkginfo` in the Parse build.
-	version: '0.9.0'
+	version: '0.9.1'
 
 	# Initializes the Captain Up SDK.
 	# 
@@ -66,6 +66,19 @@ class CaptainUp
 	# 
 	status: (callback) =>
 		@request url: '/status', callback: callback
+
+
+# Returns a new instance of the Captain Up SDK. Useful when working with
+# multiple apps and API keys.
+# 
+# Example usage:
+#   captain = require 'captainup'
+#   app1 = captain.client.up(api_key: 'api_key', api_secret: 'api_secret')
+# 
+# @return {CaptainUp} a new instance of the Captain Up SDK
+# 
+CaptainUp::__defineGetter__ 'client', ->
+	new CaptainUp()
 
 
 # Captain Up Middlewares
