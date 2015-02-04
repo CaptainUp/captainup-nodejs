@@ -220,7 +220,7 @@ All the Captain Up request methods also return [A+ compliant promises](https://g
 
 ## Changelog
 
-See [changelog.md](https://github.com/captainup/captain-nodejs/blob/master/changelog.md)
+See [changelog.md](https://github.com/CaptainUp/captainup-nodejs/blob/master/changelog.md)
 
 ## License
 
