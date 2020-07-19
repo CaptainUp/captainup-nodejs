@@ -1,8 +1,4 @@
-![Captain Up - Engagement Platform as a Service](https://captainup.com/assets/help/nodejs/node-js-readme.png)
-
 # Captain Up NodeJS SDK
-
-![https://nodei.co/npm/captainup.png](https://nodei.co/npm/captainup.png?downloads=true)
 
 `npm install captainup`
 
@@ -20,13 +16,9 @@ If you haven't done so yet, [sign up to Captain Up](https://captainup.com/users/
 
 - **NodeJS**: Install using `npm install captainup` or add `captainup` to your `package.json` dependencies.
 
-- **Parse**: Download the `captainup.parse.js` file from above and copy it to your cloud code folder.
-
 ### Configuration
 
-1. Require the Captain Up module:
-    - **NodeJS**: `var captain = require('captainup');`
-    - **Parse**: `var captain = require('cloud/captainup.parse.js');`
+1. Require the Captain Up module: `var captain = require('captainup');`
 
 2. Initialize it with your API key and API secret:
 
@@ -168,10 +160,7 @@ All the SDK methods that send requests to the Captain Up platform are asynchrono
 
 ### Callbacks
 
-The last, optional, parameter each request method can receive is a callback function. The callback will be executed once data has returned from Captain Up, or when an error occurred.
-
-- **NodeJS** - The callback should be in the usual signature of `function(error, response)`.
-- **Parse** - In Parse, the callback is expected to be an object that contains two keys: `success` is the callback function to call after a successful request; `error` will be called if an error occurred.
+The last, optional, parameter each request method can receive is a callback function. The callback will be executed once data has returned from Captain Up, or when an error occurred. The callback should be in the usual signature of `function(error, response)`.
 
 ```javascript
 // NodeJS callbacks
@@ -179,22 +168,11 @@ captain.status(function(error, response) {
     // Will output: 'All is good'
     console.log(response.message);
 });
-
-// Parse callbacks
-captain.status({
-    success: function(response) {
-        // Will output: 'All is good'
-        console.log(response.message);
-    },
-    error: function(error) {
-        // An error occurred...
-    }
-});
 ```
 
 ### Promises
 
-All the Captain Up request methods also return [A+ compliant promises](https://github.com/promises-aplus/promises-spec). In NodeJS, we use [Bluebird promises](https://github.com/petkaantonov/bluebird), and on Parse we use [Parse.Promise](https://www.parse.com/docs/js/symbols/Parse.Promise.html). The promises will be resolved with the response, or be rejected with an error:
+All the Captain Up request methods also return [A+ compliant promises](https://github.com/promises-aplus/promises-spec) using [Bluebird promises](https://github.com/petkaantonov/bluebird). The promises will be resolved with the response, or be rejected with an error:
 
 ```javascript
     captain.status()
@@ -216,7 +194,6 @@ All the Captain Up request methods also return [A+ compliant promises](https://g
 - Run the tests: `npm test`. Note that you'll need to have your API key and secret available as environment variables: `CAPTAIN_UP_NODEJS_SDK_API_KEY` and `CAPTAIN_UP_NODEJS_SDK_API_SECRET`
 - Run the coverage report: `npm run coverage`
 - Build and compile a new version: `cake bake`
-- Deploy the sample app to Parse: `cake deploy`
 
 ## Changelog
 
@@ -224,7 +201,7 @@ See [changelog.md](https://github.com/CaptainUp/captainup-nodejs/blob/master/cha
 
 ## License
 
-Copyright (c) 2014 Captain Up <team@captainup.com>
+Copyright (c) 2020 Captain Up <team@captainup.com>
 
 You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 copy, modify, and distribute this software in source code or binary form for use
